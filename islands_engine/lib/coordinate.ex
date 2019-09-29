@@ -14,4 +14,15 @@ defmodule IslandsEngine.Coordinate do
 	def island(coordinate) do 
 		Agent.get(coordinate, fn state -> state.in_island end)
 	end
+
+	def in_island?(coordinate) do 
+		case island(coordinate) do 
+			:none -> false
+			_ -> true
+		end
+	end
+
+	def hit?(coordinate) do 
+		in_island?(coordinate) && guessed?(coordinate)
+	end
 end
