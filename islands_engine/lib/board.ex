@@ -25,4 +25,9 @@ defmodule IslandsEngine.Board do
   def get_coordinate(board, key) when is_atom(key) do
     Agent.get(board, fn board -> board[key] end)
   end
+
+  def guess_coordinate(board, key) do
+    get_coordinate(board, key)
+    |> Coordinate.guess()
+  end
 end
