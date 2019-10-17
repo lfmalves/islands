@@ -14,4 +14,11 @@ defmodule IslandsEngine.Board do
       String.to_atom("#{letter}#{number}")
     end
   end
+
+  defp initialized_board() do
+    Enum.reduce(keys(), %{}, fn key, board ->
+      {:ok, coord} = Coordinate.start_link()
+      Map.put_new(board, key, coord)
+    end)
+  end
 end
