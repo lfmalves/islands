@@ -30,4 +30,9 @@ defmodule IslandsEngine.Board do
     get_coordinate(board, key)
     |> Coordinate.guess()
   end
+
+  def coordinate_hit?(board, key) do
+    get_coordinate(board, key)
+    |> Coordinate.hit?()
+  end
 end
