@@ -4,8 +4,8 @@ defmodule IslandsEngine.Board do
   @letters ~W(a b c d e f g h i j)
   @numbers [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-  def start_link do
-    Agent.start_link(fn -> %{} end)
+  def start_link() do
+    Agent.start_link(fn -> initialized_board() end)
   end
 
   defp keys() do
