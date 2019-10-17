@@ -40,4 +40,9 @@ defmodule IslandsEngine.Board do
     get_coordinate(board, key)
     |> Coordinate.set_in_island(island)
   end
+
+  def coordinate_island(board, key) do
+    get_coordinate(board, key)
+    |> Coordinate.island()
+  end
 end
