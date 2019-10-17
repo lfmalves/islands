@@ -21,4 +21,8 @@ defmodule IslandsEngine.Board do
       Map.put_new(board, key, coord)
     end)
   end
+
+  def get_coordinate(board, key) when is_atom(key) do
+    Agent.get(board, fn board -> board[key] end)
+  end
 end
