@@ -35,4 +35,9 @@ defmodule IslandsEngine.Board do
     get_coordinate(board, key)
     |> Coordinate.hit?()
   end
+
+  def set_coordinate_in_island(board, key, island) do
+    get_coordinate(board, key)
+    |> Coordinate.set_in_island(island)
+  end
 end
