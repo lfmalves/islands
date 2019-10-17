@@ -7,4 +7,11 @@ defmodule IslandsEngine.Board do
   def start_link do
     Agent.start_link(fn -> %{} end)
   end
+
+  defp keys() do
+    for letter <- @letters,
+        number <- @numbers do
+      String.to_atom("#{letter}#{number}")
+    end
+  end
 end
