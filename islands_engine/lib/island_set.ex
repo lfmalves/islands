@@ -13,4 +13,10 @@ defmodule IslandsEngine.IslandSet do
       Map.put(set, key, island)
     end)
   end
+
+  defp keys() do
+    %IslandSet{}
+    |> Map.from_struct()
+    |> Map.keys()
+  end
 end
