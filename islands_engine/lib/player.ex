@@ -29,4 +29,5 @@ defmodule IslandsEngine.Player do
   end
 
   defp name_to_string(:none), do: ":none"
+  defp name_to_string(name), do: ~s("#{name}")
 end
