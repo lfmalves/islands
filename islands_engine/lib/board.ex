@@ -45,4 +45,8 @@ defmodule IslandsEngine.Board do
     get_coordinate(board, key)
     |> Coordinate.island()
   end
+
+  def to_string(board) do
+    "%{" <> string_body(board) <> "}"
+  end
 end
