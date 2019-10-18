@@ -6,4 +6,11 @@ defmodule IslandsEngine.IslandSet do
   def start_link() do
     Agent.start_link(fn -> initialized_set() end)
   end
+
+  defp initialized_set() do
+    Enum.reduce(keys(), %IslandSet{}, fn key, set ->
+      {:ok, island} = Island.start_link()
+      Map.put(set, key, island)
+    end)
+  end
 end
