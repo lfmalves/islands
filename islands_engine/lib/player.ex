@@ -12,4 +12,8 @@ defmodule IslandsEngine.Player do
   def set_name(player, name) do
     Agent.update(player, fn state -> Map.put(state, :name, name) end)
   end
+
+  def to_string(player) do
+    "%Player{" <> string_body(player) <> "}"
+  end
 end
