@@ -19,4 +19,8 @@ defmodule IslandsEngine.IslandSet do
     |> Map.from_struct()
     |> Map.keys()
   end
+
+  def to_string(island_set) do
+    "%IslandSet{" <> string_body(island_set) <> "}"
+  end
 end
