@@ -27,4 +27,6 @@ defmodule IslandsEngine.Player do
       IslandSet.to_string(state.island_set) <>
       ",\n" <> ":board => " <> Board.to_string(state.board)
   end
+
+  defp name_to_string(:none), do: ":none"
 end
