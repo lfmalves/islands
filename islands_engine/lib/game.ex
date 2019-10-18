@@ -9,4 +9,8 @@ defmodule IslandsEngine.Game do
   def handle_call(:demo, _from, state) do
     {:reply, state, state}
   end
+
+  def call_demo(game) do
+    GenServer.call(game, :demo)
+  end
 end
