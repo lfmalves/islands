@@ -9,6 +9,12 @@ defmodule IslandsEngine.Game do
     GenServer.start_link(__MODULE__, name)
   end
 
+  def init(name) do
+    {:ok, player1} = Player.start_link(name)
+    {:ok, player2} = Player.start_link()
+    {:ok, %Game{player1: player1, player2: player2}}
+  end
+
   def handle_call(:demo, _from, state) do
     {:reply, state, state}
   end
