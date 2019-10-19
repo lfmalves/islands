@@ -19,6 +19,11 @@ defmodule IslandsEngine.Game do
     GenServer.call(pid, {:add_player, name})
   end
 
+  def handle_call({:add_player, name}, _from, state) do
+    Player.set_name(state.player2, name)
+    {:reply, :ok, state}
+  end
+
   def handle_call(:demo, _from, state) do
     {:reply, state, state}
   end
