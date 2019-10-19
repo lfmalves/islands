@@ -9,10 +9,6 @@ defmodule IslandsEngine.Game do
     GenServer.call(game, :demo)
   end
 
-  def handle_cast(:demo, state) do
-    {:noreply, %{state | test: "new value"}}
-  end
-
   def cast_demo(pid) do
     GenServer.cast(pid, :demo)
   end
