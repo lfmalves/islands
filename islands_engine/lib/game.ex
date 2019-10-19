@@ -8,8 +8,4 @@ defmodule IslandsEngine.Game do
   def call_demo(game) do
     GenServer.call(game, :demo)
   end
-
-  def cast_demo(pid) do
-    GenServer.cast(pid, :demo)
-  end
 end
