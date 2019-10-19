@@ -13,4 +13,8 @@ defmodule IslandsEngine.Game do
   def call_demo(game) do
     GenServer.call(game, :demo)
   end
+
+  def handle_cast(:demo, state) do
+    {:noreply, %{state | test: "new value"}}
+  end
 end
