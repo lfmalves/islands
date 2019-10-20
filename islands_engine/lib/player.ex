@@ -53,4 +53,8 @@ defmodule IslandsEngine.Player do
   defp convert_coordinate(board, coordinate) when is_atom coordinate do
     Board.get_coordinate(board, coordinate)
   end
+
+  defp convert_coordinate(_board, coordinate) when is_pid coordinate do
+    coordinate
+  end
 end
