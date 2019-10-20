@@ -30,4 +30,8 @@ defmodule IslandsEngine.Player do
 
   defp name_to_string(:none), do: ":none"
   defp name_to_string(name), do: ~s("#{name}")
+
+  def get_board(player) do
+    Agent.get(player, fn state -> state.board end)
+  end
 end
