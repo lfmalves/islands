@@ -1,7 +1,7 @@
 defmodule IslandsEngine.Game do
   use GenServer
 
-  alias IslandsEngine.{Game, Player}
+  alias IslandsEngine.{Coordinate, Island, IslandSet, Game, Player}
 
   defstruct player1: :none, player2: :none
 
