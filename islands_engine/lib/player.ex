@@ -34,4 +34,8 @@ defmodule IslandsEngine.Player do
   def get_board(player) do
     Agent.get(player, fn state -> state.board end)
   end
+
+  def get_island_set(player) do
+    Agent.get(player, fn state -> state.island_set end)
+  end
 end
