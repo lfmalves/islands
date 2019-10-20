@@ -24,6 +24,13 @@ defmodule IslandsEngine.Game do
     {:reply, :ok, state}
   end
 
+  def handle_call({:set_island_coordinates, player, island, coordinates}, _from, state) do
+    state
+    |> Map.get(player)
+    |> Player.set_island_coordinates(island, coordinates)
+    {:reply, :ok, state}
+  end
+
   def handle_call(:demo, _from, state) do
     {:reply, state, state}
   end
