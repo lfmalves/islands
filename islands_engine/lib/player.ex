@@ -49,4 +49,8 @@ defmodule IslandsEngine.Player do
   defp convert_coordinates(board, coordinates) do
     Enum.map(coordinates, fn coord -> convert_coordinates(board, coord) end)
   end
+
+  defp convert_coordinate(board, coordinate) when is_atom coordinate do
+    Board.get_coordinate(board, coordinate)
+  end
 end
