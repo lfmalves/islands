@@ -38,4 +38,11 @@ defmodule IslandsEngine.Player do
   def get_island_set(player) do
     Agent.get(player, fn state -> state.island_set end)
   end
+
+  def set_island_coordinates(player, island, coordinates) do
+    board = Player.get_board(player)
+    island_set = Player.get_island_set(player)
+    new_coordinates = convert_coordinates(board, coordinates)
+    IslandSet.set_island_coordinates(island_set, island, new_coordinates)
+  end
 end
