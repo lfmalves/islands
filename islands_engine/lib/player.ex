@@ -45,4 +45,8 @@ defmodule IslandsEngine.Player do
     new_coordinates = convert_coordinates(board, coordinates)
     IslandSet.set_island_coordinates(island_set, island, new_coordinates)
   end
+
+  defp convert_coordinates(board, coordinates) do
+    Enum.map(coordinates, fn coord -> convert_coordinates(board, coord) end)
+  end
 end
