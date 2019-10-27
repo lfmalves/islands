@@ -1,5 +1,5 @@
 defmodule IslandsEngine.IslandSet do
-  alias IslandsEngine.{Island, IslandSet}
+  alias IslandsEngine.{Island, IslandSet, Coordinate}
 
   defstruct atoll: :none, dot: :none, l_shape: :none, s_shape: :none, square: :none
 
