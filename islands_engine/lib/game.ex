@@ -53,4 +53,8 @@ defmodule IslandsEngine.Game do
   defp opponent(state, :player1) do
     state.player2
   end
+
+  defp opponent(state, _player2) do
+    state.player1
+  end
 end
