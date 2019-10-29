@@ -49,4 +49,8 @@ defmodule IslandsEngine.Game do
   def guess_coordinate(pid, player, coordinate) when is_atom player and is_atom coordinate do
     GenServer.call(pid, {:guess, player, coordinate})
   end
+
+  defp opponent(state, :player1) do
+    state.player2
+  end
 end
