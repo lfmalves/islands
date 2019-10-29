@@ -31,8 +31,11 @@ defmodule IslandsEngine.Game do
     {:reply, :ok, state}
   end
 
-  def handle_call(:demo, _from, state) do
-    {:reply, state, state}
+  def handle_call({:guess, player, coordinate}, _from, state) do
+    opponent = opponent(state, player)
+    opponent_board = Player.get_board(opponent)
+    response = Player.guess_coordinate(opponent_board, coordinate)
+    {:reply, response, state}
   end
 
   def call_demo(game) do
