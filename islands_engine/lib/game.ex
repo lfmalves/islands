@@ -42,4 +42,8 @@ defmodule IslandsEngine.Game do
   def set_island_coordinates(pid, player, island, coordinates) when is_atom player and is_atom island do
     GenServer.call(pid, {:set_island_coordinates, player, island, coordinates})
   end
+
+  def guess_coordinate(pid, player, coordinate) when is_atom player and is_atom coordinate do
+    GenServer.call(pid, {:guess, player, coordinate})
+  end
 end
