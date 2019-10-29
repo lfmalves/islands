@@ -57,4 +57,12 @@ defmodule IslandsEngine.Player do
   defp convert_coordinate(_board, coordinate) when is_pid coordinate do
     coordinate
   end
+
+  def guess_coordinate(opponent_board, coordinate) do
+    Board.guess_coordinate(opponent_board, coordinate)
+    case Board.coordinate_hit?(opponent_board, coordinate) do
+      true -> :hit
+      false -> :miss
+    end
+  end
 end
